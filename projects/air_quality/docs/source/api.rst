@@ -1,28 +1,27 @@
-﻿Python API Reference
+Python API Reference
 ====================
 
 Data Loading
 ------------
 
-.. automodule:: projects.air_quality.src.utils.data_loader
+.. automodule:: src.utils.data_loader
 
 Preprocessing
 -------------
 
-.. automodule:: projects.air_quality.src.utils.preprocessing
+.. automodule:: src.utils.preprocessing
 
 Analysis
 --------
 
-.. automodule:: projects.air_quality.src.utils.analysis
+.. automodule:: src.utils.analysis
 
 Metadata
 --------
 
-.. automodule:: projects.air_quality.src.utils.metadata
+.. automodule:: src.utils.metadata
 
 Regression Models
 -----------------
 
-.. automodule:: projects.air_quality.src.models.regression
-
+.. automodule:: src.models.regression

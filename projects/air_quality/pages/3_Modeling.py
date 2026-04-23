@@ -1,14 +1,41 @@
-﻿import streamlit as st
+import streamlit as st
 
-from projects.air_quality.src.config import DEFAULT_TARGET, SUPPORTED_TARGETS
-from projects.air_quality.src.models.regression import evaluate_models
-from projects.air_quality.src.ui.theme import apply_theme
-from projects.air_quality.src.utils.data_loader import load_air_quality_data
+from src.config import DEFAULT_TARGET, SUPPORTED_TARGETS
+from src.models.regression import evaluate_models
+from src.ui.theme import apply_theme
+from src.utils.data_loader import load_air_quality_data
 
 
 st.set_page_config(page_title="Regression Modeling", layout="wide")
 apply_theme()
 st.title("Regression Modeling")
+st.markdown(
+    """
+    <style>
+    button[data-testid="stBaseButton-primary"] {
+        background: #0E4548 !important;
+        border: 1px solid #0E4548 !important;
+        color: #FFFFFF !important;
+    }
+
+    button[data-testid="stBaseButton-primary"] * {
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+    }
+
+    button[data-testid="stBaseButton-primary"]:hover {
+        background: #173C3B !important;
+        border-color: #173C3B !important;
+    }
+
+    button[data-testid="stBaseButton-primary"]:hover * {
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 df = load_air_quality_data()
 
@@ -62,4 +89,3 @@ It intentionally excludes the other `GT` reference-analyzer gas concentrations. 
     )
 else:
     st.write("Choose a target and run the benchmark to compare regression models.")
-

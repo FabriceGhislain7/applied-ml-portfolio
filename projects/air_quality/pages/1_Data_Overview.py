@@ -1,11 +1,11 @@
-﻿import plotly.express as px
+import plotly.express as px
 import streamlit as st
 
-from projects.air_quality.src.ui.theme import apply_theme, themed_plotly
-from projects.air_quality.src.utils.analysis import build_dataset_profile, monthly_missingness, numeric_summary, variable_type_summary
-from projects.air_quality.src.utils.data_loader import load_air_quality_data, summarize_data_quality
-from projects.air_quality.src.utils.metadata import variable_dictionary
-from projects.air_quality.src.utils.preprocessing import missingness_table
+from src.ui.theme import apply_theme, themed_plotly
+from src.utils.analysis import build_dataset_profile, monthly_missingness, numeric_summary, variable_type_summary
+from src.utils.data_loader import load_air_quality_data, summarize_data_quality
+from src.utils.metadata import variable_dictionary
+from src.utils.preprocessing import missingness_table
 
 
 st.set_page_config(page_title="Data Overview", layout="wide")
@@ -113,4 +113,3 @@ The numeric summary gives the range, mean, median, and spread of each measuremen
 Use it to identify outliers, very skewed variables, and columns with very different units. For example, `CO(GT)` is measured in mg/m^3, while `NO2(GT)` is measured in microg/m^3. Comparing raw numbers across different units is not meaningful unless the units are considered.
 """
     )
-

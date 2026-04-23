@@ -1,6 +1,6 @@
-﻿from projects.air_quality.src.config import DEFAULT_TARGET
-from projects.air_quality.src.models.regression import evaluate_models, regression_metrics
-from projects.air_quality.src.utils.data_loader import load_air_quality_data
+from src.config import DEFAULT_TARGET
+from src.models.regression import evaluate_models, regression_metrics
+from src.utils.data_loader import load_air_quality_data
 
 
 def test_regression_metrics_returns_expected_keys():
@@ -17,4 +17,3 @@ def test_evaluate_models_returns_leaderboard_on_subset():
     assert not run.leaderboard.empty
     assert "holdout_MAE" in run.leaderboard.columns
     assert run.best_model_name in set(run.leaderboard["model"])
-

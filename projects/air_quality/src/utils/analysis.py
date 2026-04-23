@@ -1,11 +1,11 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 
 import pandas as pd
 from scipy import stats
 
-from projects.air_quality.src.config import REFERENCE_COLUMNS, SENSOR_COLUMNS
+from src.config import REFERENCE_COLUMNS, SENSOR_COLUMNS
 
 
 @dataclass(frozen=True)
@@ -126,4 +126,3 @@ def monthly_missingness(df: pd.DataFrame) -> pd.DataFrame:
     return work.groupby("month")[value_columns].apply(lambda frame: int(frame.isna().sum().sum())).reset_index(
         name="missing_cells"
     )
-

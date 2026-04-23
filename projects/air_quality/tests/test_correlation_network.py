@@ -1,5 +1,5 @@
-﻿from projects.air_quality.src.utils.analysis import correlation_adjacency_matrix, correlation_edge_list, correlation_p_values, sensor_reference_correlation
-from projects.air_quality.src.utils.data_loader import load_air_quality_data
+from src.utils.analysis import correlation_adjacency_matrix, correlation_edge_list, correlation_p_values, sensor_reference_correlation
+from src.utils.data_loader import load_air_quality_data
 
 
 def test_correlation_p_values_match_correlation_shape():
@@ -27,4 +27,3 @@ def test_correlation_adjacency_matrix_and_edge_list_are_consistent():
     if not edges.empty:
         assert {"source", "target", "correlation", "abs_correlation"}.issubset(edges.columns)
         assert (edges["abs_correlation"] >= 0.7).all()
-

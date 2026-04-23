@@ -1,6 +1,6 @@
-﻿from projects.air_quality.src.config import DEFAULT_TARGET
-from projects.air_quality.src.utils.data_loader import load_air_quality_data
-from projects.air_quality.src.utils.preprocessing import add_time_features, build_modeling_frame, chronological_train_test_split
+from src.config import DEFAULT_TARGET
+from src.utils.data_loader import load_air_quality_data
+from src.utils.preprocessing import add_time_features, build_modeling_frame, chronological_train_test_split
 
 
 def test_add_time_features_creates_cyclic_columns():
@@ -33,4 +33,3 @@ def test_chronological_train_test_split_preserves_row_order():
     assert X_train.index.max() < X_test.index.min()
     assert len(y_train) == len(X_train)
     assert len(y_test) == len(X_test)
-

@@ -1,9 +1,9 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 
-from projects.air_quality.src.config import METEO_COLUMNS, REFERENCE_COLUMNS, SENSOR_COLUMNS, SUPPORTED_TARGETS
+from src.config import METEO_COLUMNS, REFERENCE_COLUMNS, SENSOR_COLUMNS, SUPPORTED_TARGETS
 
 
 def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
@@ -80,4 +80,3 @@ def missingness_table(df: pd.DataFrame) -> pd.DataFrame:
 def available_reference_columns(df: pd.DataFrame) -> list[str]:
     """Return reference analyzer columns available in the loaded dataset."""
     return [col for col in REFERENCE_COLUMNS if col in df.columns]
-

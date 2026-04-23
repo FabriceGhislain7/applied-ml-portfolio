@@ -1,4 +1,4 @@
-﻿Air Quality Sensor Calibration
+Air Quality Sensor Calibration
 ==============================
 
 This documentation describes the development workflow, architecture, and Python API for the Air Quality Sensor Calibration project.
@@ -22,4 +22,3 @@ The main repository also includes:
 * ``docs/TECHNICAL_ARCHITECTURE.md`` for the Markdown architecture document.
 * ``docs/WORKFLOW.md`` for the Markdown development workflow.
 * ``docs/air_quality_analysis_ml.ipynb`` for reproducible EDA and model benchmarking.
-

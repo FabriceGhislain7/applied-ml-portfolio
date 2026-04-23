@@ -1,2 +1,1 @@
-﻿"""Air quality analysis package."""
-
+"""Air quality analysis package."""

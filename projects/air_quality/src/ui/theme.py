@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import base64
 from pathlib import Path
@@ -6,7 +6,7 @@ from pathlib import Path
 import plotly.graph_objects as go
 import streamlit as st
 
-from projects.air_quality.src.config import PROJECT_ROOT
+from src.config import PROJECT_ROOT
 
 
 IMAGE_DIR = PROJECT_ROOT / "src" / "images"
@@ -58,6 +58,21 @@ def apply_theme() -> None:
         .main .block-container {{
             background: var(--aq-white);
             color: #000000;
+            padding-top: 0.8rem;
+        }}
+
+        .aq-hero-copy {{
+            padding-top: 0.2rem;
+        }}
+
+        .aq-hero-copy h1 {{
+            margin-bottom: 0.2rem;
+        }}
+
+        .aq-hero-copy p {{
+            margin-top: 0;
+            margin-bottom: 0;
+            max-width: 52rem;
         }}
 
         h1, h2, h3, h4, h5, h6 {{
@@ -103,18 +118,32 @@ def apply_theme() -> None:
         .stDownloadButton > button,
         a[data-testid="stLinkButton"] {{
             border-radius: 8px;
-            border: 1px solid var(--aq-deep);
-            background: var(--aq-deep);
-            color: var(--aq-white);
+            border: 1px solid var(--aq-deep) !important;
+            background: var(--aq-deep) !important;
+            color: var(--aq-white) !important;
             font-weight: 700;
+        }}
+
+        .stButton > button[kind="primary"],
+        button[data-testid="stBaseButton-primary"] {{
+            border-color: var(--aq-deep) !important;
+            background: var(--aq-deep) !important;
+            color: var(--aq-white) !important;
         }}
 
         .stButton > button:hover,
         .stDownloadButton > button:hover,
         a[data-testid="stLinkButton"]:hover {{
-            border-color: var(--aq-ink);
-            background: var(--aq-ink);
-            color: var(--aq-white);
+            border-color: var(--aq-ink) !important;
+            background: var(--aq-ink) !important;
+            color: var(--aq-white) !important;
+        }}
+
+        .stButton > button[kind="primary"]:hover,
+        button[data-testid="stBaseButton-primary"]:hover {{
+            border-color: var(--aq-ink) !important;
+            background: var(--aq-ink) !important;
+            color: var(--aq-white) !important;
         }}
 
         [data-testid="stDataFrame"] {{
@@ -131,15 +160,28 @@ def apply_theme() -> None:
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
-            padding-top: 0.35rem;
+        }}
+
+        .aq-logo-frame {{
+            width: 152px;
+            height: 118px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, var(--aq-accent) 0%, var(--aq-deep) 100%);
+            border: 1px solid rgba(23, 60, 59, 0.18);
+            border-radius: 16px;
+            box-shadow: 0 14px 24px rgba(14, 69, 72, 0.14);
+            padding: 0.4rem 0.9rem;
+            box-sizing: border-box;
         }}
 
         .aq-logo img {{
-            width: 72px;
-            height: 72px;
+            width: 82px;
+            height: 82px;
             object-fit: contain;
-            border-radius: 8px;
         }}
+
         </style>
         """,
         unsafe_allow_html=True,
@@ -163,15 +205,16 @@ def themed_plotly(fig: go.Figure) -> go.Figure:
 
 
 def show_top_right_logo() -> None:
-    """Render the compact project logo."""
+    """Render the project logo inside a compact framed tile."""
     if LOGO_IMAGE.exists():
         encoded = base64.b64encode(LOGO_IMAGE.read_bytes()).decode("ascii")
         st.markdown(
             f"""
             <div class="aq-logo">
-                <img src="data:image/png;base64,{encoded}" alt="Air Quality Sensor logo">
+                <div class="aq-logo-frame">
+                    <img src="data:image/png;base64,{encoded}" alt="Air Quality Sensor logo">
+                </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
-

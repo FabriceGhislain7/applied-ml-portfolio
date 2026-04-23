@@ -1,7 +1,7 @@
-﻿import pandas as pd
+import pandas as pd
 
-from projects.air_quality.src.config import DATA_FILE
-from projects.air_quality.src.utils.data_loader import load_air_quality_data, summarize_data_quality
+from src.config import DATA_FILE
+from src.utils.data_loader import load_air_quality_data, summarize_data_quality
 
 
 def test_load_air_quality_data_parses_timestamp_and_missing_values():
@@ -19,4 +19,3 @@ def test_summarize_data_quality_counts_sentinel_values():
     assert summary.rows == 9357
     assert summary.sentinel_values > 0
     assert summary.missing_cells_after_cleaning == summary.sentinel_values
-

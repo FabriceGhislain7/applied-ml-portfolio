@@ -1,2 +1,1 @@
-﻿"""Tests for the air quality project."""
-
+"""Tests for the air quality project."""

@@ -1,2 +1,1 @@
-﻿"""Regression models for sensor calibration."""
-
+"""Regression models for sensor calibration."""

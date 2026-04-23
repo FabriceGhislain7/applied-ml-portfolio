@@ -1,2 +1,1 @@
-﻿"""Shared UI helpers for the Streamlit dashboard."""
-
+"""Shared UI helpers for the Streamlit dashboard."""

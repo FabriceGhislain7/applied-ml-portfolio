@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 
 APP_TITLE = "Air Quality Sensor Calibration"
@@ -21,4 +21,3 @@ SENSOR_COLUMNS = [
 METEO_COLUMNS = ["T", "RH", "AH"]
 DEFAULT_TARGET = "C6H6(GT)"
 SUPPORTED_TARGETS = ["CO(GT)", "C6H6(GT)", "NOx(GT)", "NO2(GT)"]
-

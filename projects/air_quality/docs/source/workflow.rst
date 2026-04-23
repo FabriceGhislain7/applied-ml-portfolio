@@ -1,4 +1,4 @@
-﻿Development Workflow
+Development Workflow
 ====================
 
 This page summarizes the development workflow. The canonical Markdown version is available at ``docs/WORKFLOW.md``.
@@ -41,4 +41,3 @@ Scientific Constraints
 ----------------------
 
 The dashboard does not certify air quality and does not provide a production monitoring system. It is a reproducible baseline for analysing noisy historical sensor data.
-

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 
-from projects.air_quality.src.config import DATA_FILE, SENTINEL_MISSING_VALUE
+from src.config import DATA_FILE, SENTINEL_MISSING_VALUE
 
 
 @dataclass(frozen=True)
@@ -57,4 +57,3 @@ def summarize_data_quality(path: Path | str = DATA_FILE) -> DataQualitySummary:
         sentinel_values=sentinel_values,
         missing_cells_after_cleaning=int(clean.isna().sum().sum()),
     )
-

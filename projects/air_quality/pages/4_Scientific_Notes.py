@@ -1,6 +1,6 @@
-﻿import streamlit as st
+import streamlit as st
 
-from projects.air_quality.src.ui.theme import apply_theme
+from src.ui.theme import apply_theme
 
 st.set_page_config(page_title="Scientific Notes", layout="wide")
 apply_theme()
@@ -94,4 +94,3 @@ st.markdown(
 The project provides a reproducible baseline workflow for noisy air-quality sensor data: loading, cleaning, missing-value handling, exploratory analysis, leakage-aware feature construction, and regression evaluation. Its strongest scientific value is the explicit treatment of sensor responses as noisy calibration inputs rather than direct pollutant measurements.
 """
 )
-

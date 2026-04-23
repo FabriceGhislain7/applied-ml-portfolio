@@ -1,12 +1,12 @@
-﻿import numpy as np
+import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from projects.air_quality.src.config import REFERENCE_COLUMNS, SENSOR_COLUMNS
-from projects.air_quality.src.ui.theme import COLORS, apply_theme, themed_plotly
-from projects.air_quality.src.utils.analysis import correlation_adjacency_matrix, correlation_edge_list, correlation_p_values, sensor_reference_correlation
-from projects.air_quality.src.utils.data_loader import load_air_quality_data
+from src.config import REFERENCE_COLUMNS, SENSOR_COLUMNS
+from src.ui.theme import COLORS, apply_theme, themed_plotly
+from src.utils.analysis import correlation_adjacency_matrix, correlation_edge_list, correlation_p_values, sensor_reference_correlation
+from src.utils.data_loader import load_air_quality_data
 
 
 st.set_page_config(page_title="Sensor Analysis", layout="wide")
@@ -226,4 +226,3 @@ The table uses `source` and `target` to identify each variable pair, but the net
 Because this dataset has many hourly observations, p-values can become very small even for relationships that are not scientifically strong. For that reason, the graph uses both statistical significance and correlation strength.
 """
     )
-

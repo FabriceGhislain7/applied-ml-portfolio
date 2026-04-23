@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import pandas as pd
 
@@ -106,4 +106,3 @@ def variable_dictionary() -> pd.DataFrame:
         },
     ]
     return pd.DataFrame(rows)
-

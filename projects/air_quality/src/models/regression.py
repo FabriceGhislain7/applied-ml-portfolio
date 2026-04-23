@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 
@@ -13,8 +13,8 @@ from sklearn.model_selection import TimeSeriesSplit, cross_validate
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from projects.air_quality.src.config import RANDOM_STATE
-from projects.air_quality.src.utils.preprocessing import build_modeling_frame, chronological_train_test_split
+from src.config import RANDOM_STATE
+from src.utils.preprocessing import build_modeling_frame, chronological_train_test_split
 
 
 @dataclass(frozen=True)
@@ -116,4 +116,3 @@ def evaluate_models(df: pd.DataFrame, target: str, test_size: float = 0.2, cv_sp
         train_rows=len(X_train),
         test_rows=len(X_test),
     )
-

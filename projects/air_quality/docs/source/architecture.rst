@@ -1,4 +1,4 @@
-﻿Architecture
+Architecture
 ============
 
 The project separates UI code from reusable analysis and modelling code.
@@ -54,4 +54,3 @@ Dashboard Pages
 
 ``pages/4_Scientific_Notes.py``
    Scientific assumptions, model methods, limitations, and possible extensions.
-
